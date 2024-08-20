@@ -30,7 +30,7 @@
     "build": "node-gyp rebuild && tsc",
     "build-ts": "tsc",
     "prepublishOnly": "npm run build-ts && npm run readme",
-    "install": "prebuild-install --runtime napi || node-gyp rebuild",
+    "install": "npm run build-ts; prebuild-install --runtime napi || node-gyp rebuild",
     "rebuild": "node-gyp rebuild"
   },
   "author": "Juan Cruz Viotti <juan@balena.io>",
