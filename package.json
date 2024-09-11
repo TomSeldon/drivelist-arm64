@@ -27,11 +27,11 @@
     "lint-ts": "balena-lint --typescript lib tests",
     "prettier": "balena-lint --typescript --fix lib tests",
     "readme": "jsdoc2md --template doc/README.hbs js/index.js > README.md",
-    "build": "node-gyp rebuild && tsc",
+    "build": "npx node-gyp rebuild && tsc",
     "build-ts": "tsc",
     "prepublishOnly": "npm run build-ts && npm run readme",
-    "install": "npm run build-ts; prebuild-install --runtime napi || node-gyp rebuild",
-    "rebuild": "node-gyp rebuild"
+    "install": "prebuild-install --runtime napi || npx node-gyp rebuild",
+    "rebuild": "npx node-gyp rebuild"
   },
   "author": "Juan Cruz Viotti <juan@balena.io>",
   "license": "Apache-2.0",
